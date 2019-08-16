@@ -5,6 +5,13 @@ import utils
 
 class TestSelectColumns(unittest.TestCase):
 
+    def test_select_columns_inexist(self):
+        columns = ["a", "b", "c", "d", "e"]
+
+        expected = []
+        actual = utils.select_columns(columns, labels=["f"])
+        self.assertListEqual(actual, expected)
+
     def test_select_columns(self):
         columns = ["a", "b", "c", "d", "e"]
 
